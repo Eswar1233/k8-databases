@@ -57,7 +57,7 @@ spec:
   template:
     metadata:
       labels:
-        purpose: statefulset
+        component: mongodb
         project: roboshop # has to match .spec.selector.matchLabels
         tier: database
     spec:
@@ -66,7 +66,7 @@ spec:
         image: eswarteja123/mongodb:v1
         volumeMounts:
         - name: mongodb-data
-          mountPath: /usr/share/nginx/html
+          mountPath: /data/db
  # This is nothing but PVC, we can directly create here
   volumeClaimTemplates:
   - metadata:
