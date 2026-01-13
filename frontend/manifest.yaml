@@ -106,19 +106,22 @@ spec:
             memory: "128Mi"
           limits:
             cpu: "100m"
-            memory: "256Mi"
+            memory: "256Mi"           
+        # envFrom:
+        # - configMapRef:
+        #     name: frontend
         volumeMounts:
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
               readOnly: true
-    volumes:
-    - name: nginx-conf
-      configMap: 
-        name: nginx-conf
-        items:
-        - key: nginx.conf
-          path: nginx.conf
+      volumes:
+        - name: nginx-conf
+          configMap: 
+            name: nginx-conf
+            items:
+            - key: nginx.conf
+              path: nginx.conf
 --- #service creation ------------
 apiVersion: v1
 kind: Service
