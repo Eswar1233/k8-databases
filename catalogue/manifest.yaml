@@ -39,7 +39,7 @@ spec:
       containers:
       - name: catalogue
         image: eswarteja123/catalogue:v1
-        resurces:
+        resources:
           requests:
             cpu: "50m"
             memory: "128Mi"
