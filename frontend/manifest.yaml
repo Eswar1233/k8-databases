@@ -107,9 +107,6 @@ spec:
           limits:
             cpu: "100m"
             memory: "256Mi"
-        # envFrom:
-        # - configMapRef:
-        #     name: frontend
         volumeMounts:
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
